@@ -16,11 +16,12 @@ Route::get('/', function () {
 });
 
 
-Route::post('categories', 'CategoriesController@index')->name('categories');  
-Route::post('addCategories', 'CategoriesController@create')->name('addCategories');  
+Route::get('categories', 'CategoriesController@index')->name('categories');  
+Route::get('addCategories', 'CategoriesController@create')->name('addCategories');  
 Route::post('editCategories', 'CategoriesController@index')->name('editCategories');  
+Route::post('save-categories', 'CategoriesController@store')->name('save-categories');  
 
 
 Route::post('products', 'ProductsController@index')->name('products');  
-Route::post('addProducts', 'ProductsController@index')->name('addProducts');  
-Route::post('editProducts', 'ProductsController@index')->name('addProducts');  
+Route::get('addProducts', 'ProductsController@create')->name('addProducts'); 
+Route::post('editProducts', 'ProductsController@index')->name('editProducts');  

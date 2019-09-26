@@ -14,8 +14,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = categories::all();
-        return view('Categories.view_categories', compact('categories'));
+        // $categories = categories::all();
+        // return view('Categories.view_categories', compact('categories'));
+         return view('Categories.view_categories');
     }
 
     /**
@@ -25,7 +26,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('Products.add');
+        return view('Categories.add_categories');
     }
 
     /**

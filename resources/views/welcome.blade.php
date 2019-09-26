@@ -341,7 +341,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Add Categories</a></li>
+            <li class="active"><a href="{{route('addCategories')}}"><i class="fa fa-circle-o"></i> Add Categories</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Edit Categories</a></li>
           </ul>
         </li>

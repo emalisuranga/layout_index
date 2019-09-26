@@ -14,7 +14,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        $department = products::all();
+        return view('Department.department', compact('department'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('Products.add');
     }
 
     /**

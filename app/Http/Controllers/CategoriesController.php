@@ -14,7 +14,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('Products.add');
+        $categories = categories::all();
+        return view('Categories.view_categories', compact('categories'));
     }
 
     /**
@@ -24,7 +25,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('Products.add');
     }
 
     /**
@@ -35,7 +36,15 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+            'name' => 'required|max:255',
+            'location' => 'required'
+        ]);
+        
+        $department = categories::create(request(['name', 'email', 'descripiton']));
+        
+        
+        return redirect()->to('/home');
     }
 
     /**

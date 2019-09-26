@@ -66,6 +66,19 @@
                   <input type="text" class="form-control" id="proName" name="proName" placeholder="Enter Products Name">
                 </div>
                 <div class="form-group">
+                  <div class='row'>
+                    <div class='col-md-3'>
+                      <label>Is Active</label>
+                    </div>
+                    <div class='col-md-3'>
+                      <select class="form-control">
+                        <option value='1'>Yes</option>
+                        <option value='0'>No</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
                   <label for="exampleInputFile">Main Image</label>
                   <input type="file" id="exampleInputFile">
 

@@ -38,11 +38,12 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $this->validate(request(), [
-            'name' => 'required|max:255',
-            'location' => 'required'
+            'proName' => 'required|max:255',
+            'proDiscr' => 'required',
+            'isActive' => 'required',
         ]);
         
-        $department = categories::create(request(['name', 'email', 'descripiton']));
+        $department = categories::create(request(['proName', 'proDiscr', 'isActive']));
         
         
         return redirect()->to('/home');

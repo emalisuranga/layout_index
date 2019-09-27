@@ -14,9 +14,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        // $categories = categories::all();
-        // return view('Categories.view_categories', compact('categories'));
-         return view('Categories.view_categories');
+        $categories = categories::all();
+        return view('Categories.view_categories', compact('categories'));
     }
 
     /**
@@ -38,15 +37,15 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $this->validate(request(), [
-            'proName' => 'required|max:255',
-            'proDiscr' => 'required',
+            'categories_Name' => 'required|max:255',
+            'categories_description' => 'required',
             'isActive' => 'required',
         ]);
         
-        $department = categories::create(request(['proName', 'proDiscr', 'isActive']));
+        $department = categories::create(request(['categories_Name', 'categories_description', 'isActive']));
         
         
-        return redirect()->to('/home');
+        return redirect()->to('categories');
     }
 
     /**
@@ -66,9 +65,10 @@ class CategoriesController extends Controller
      * @param  \App\categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function edit(categories $categories)
+    public function edit($id)
     {
-        //
+        $categories = categories::find($id);
+        return view('Categories.edit_categories', compact('categories'));
     }
 
     /**

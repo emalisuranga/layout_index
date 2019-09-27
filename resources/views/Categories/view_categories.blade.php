@@ -33,31 +33,21 @@
                 <tr>
                   <th>Categories</th>
                   <th>Categories Discrpiton</th>
+                  <th>Active</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                {{-- <tr>
-                  <td>Misc</td>
-                  <td>IE Mobile</td>
-                  <td>Windows Mobile 6</td>
-                  <td>-</td>
-                  <td>C</td>
-                </tr>
+                @foreach($categories as $categori)
                 <tr>
-                  <td>Misc</td>
-                  <td>PSP browser</td>
-                  <td>PSP</td>
-                  <td>-</td>
-                  <td>C</td>
+                <td>{{$categori->categories_Name}}</td>
+                <td>{{$categori->categories_description}}</td>
+                <td>{{$categori->isActive}}</td>
+                <td>
+                  <a href="{{ route('editCategories',$categori->id)}}" class="btn btn-primary">Edit</a>
+                </td>
                 </tr>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr> --}}
+                @endforeach
                 </tbody>
               </table>
             </div>

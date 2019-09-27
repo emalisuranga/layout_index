@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get('categories', 'CategoriesController@index')->name('categories');  
 Route::get('addCategories', 'CategoriesController@create')->name('addCategories');  
-Route::post('editCategories', 'CategoriesController@index')->name('editCategories');  
+Route::get('editCategories/{id}', 'CategoriesController@edit')->name('editCategories');  
 Route::post('save-categories', 'CategoriesController@store')->name('save-categories');  
 
 

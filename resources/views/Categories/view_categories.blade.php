@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('master')
 
 @section('scripts')
     <script type="text/javascript">

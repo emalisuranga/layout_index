@@ -80,7 +80,12 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, categories $categories)
     {
-        //
+        // $ticket = $this->find($data['id']);
+        // $ticket->user_id = auth()->user()->id;
+        // $ticket->title = $data['title'];
+        // $ticket->description = $data['description'];
+        // $ticket->save();
+        // return 1;
     }
 
     /**

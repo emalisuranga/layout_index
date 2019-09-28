@@ -108,8 +108,8 @@ class ProductsController extends Controller
     public function edit($id)
     {
         $products = products::join('categories','products.category_id','=','categories.id')
-        ->join('other_image','products.id','=','other_image.product_id')
-        ->join('price','products.id','=','price.product_id')
+        // ->join('other_image','products.id','=','other_image.product_id')
+        // ->join('price','products.id','=','price.product_id')
         ->where('products.id',$id)
         ->select('products.*','categories.categories_Name as categories_Name','categories.id as categories_id')
         ->first();

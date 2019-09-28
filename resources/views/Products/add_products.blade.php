@@ -12,7 +12,7 @@
         {
           var d = document.getElementById('price-row');
           //  d.innerHTML += "<br><input type='text' id='tst"+ x++ +"'><br >";
-           d.outerHTML  +=  "<br><div class='form-group'> <div class='row'><div class='col-md-3'><label for='exampleInputEmail1'>Quantity </label><input type='text' class='form-control' id='quantity' name='quantity[}' placeholder='Enter Products Name'></div><div class='col-md-3'><label for='exampleInputEmail1'>Price</label><input type='text' class='form-control' id='price' name='price[]' placeholder='Enter Products Name'></div></div></div>"
+           d.outerHTML  +=  "<br><div class='form-group'> <div class='row'><div class='col-md-3'><label for='exampleInputEmail1'>Quantity </label><input type='text' class='form-control' id='quantity' name='quantity[}' placeholder='Enter Products Quantity'></div><div class='col-md-3'><label for='exampleInputEmail1'>Price</label><input type='text' class='form-control' id='price' name='price[]' placeholder='Enter Products Price'></div></div></div>"
         }
     </script>
 @endsection
@@ -66,19 +66,20 @@
                 <div class="form-group">
                   <label for="exampleInputFile">Other Image</label>
                   <input multiple="multiple" name="photos[]" type="file">
+                  <p class="help-block">Please enter multiple photos</p>
                 </div>
                 <div class="form-group">
-                  <label>Tiyer Price</label>
+                  <label>Price Category </label>
                 </div>
                 <div class="form-group" id="price-row">
                   <div class="row">
                     <div class="col-md-3">
                       <label for="exampleInputEmail1">Quantity </label>
-                      <input type="text" class="form-control" id="quantity" name="quantity[]" placeholder="Enter Products Name">
+                      <input type="text" class="form-control" id="quantity" name="quantity[]" placeholder="Enter Products Quantity">
                     </div>
                     <div class="col-md-3">
                       <label for="exampleInputEmail1">Price</label>
-                      <input type="text" class="form-control" id="price" name="price[]" placeholder="Enter Products Name">
+                      <input type="text" class="form-control" id="price" name="price[]" placeholder="Enter Products Price">
                     </div>
                     <div class="col-md-3">
                       <!-- <label for="exampleInputEmail1"></label> -->

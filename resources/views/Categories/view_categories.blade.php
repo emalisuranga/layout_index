@@ -44,7 +44,7 @@
                 <td>{{$categori->categories_description}}</td>
                 <td>{{$categori->isActive}}</td>
                 <td>
-                  <a href="{{ route('editCategories',$categori->id)}}" class="btn btn-primary">Edit</a>
+                  <a href="{{ route('categories.edit',$categori->id)}}" class="btn btn-primary">Edit</a>
                 </td>
                 </tr>
                 @endforeach

@@ -12,16 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
 
 
-Route::get('categories', 'CategoriesController@index')->name('categories');  
-Route::get('addCategories', 'CategoriesController@create')->name('addCategories');  
-Route::get('editCategories/{id}', 'CategoriesController@edit')->name('editCategories');  
-Route::post('save-categories', 'CategoriesController@store')->name('save-categories');  
+// Route::get('categories', 'CategoriesController@index')->name('categories');  
+// Route::get('addCategories', 'CategoriesController@create')->name('add-categories');  
+// Route::get('editCategories/{id}', 'CategoriesController@edit')->name('edit-categories');  
+// Route::post('save-categories', 'CategoriesController@store')->name('save-categories');  
+Route::resource('categories', 'CategoriesController');
+Route::resource('products', 'ProductsController');
 
 
-Route::post('products', 'ProductsController@index')->name('products');  
-Route::get('addProducts', 'ProductsController@create')->name('addProducts'); 
-Route::post('editProducts', 'ProductsController@index')->name('editProducts');  
+// Route::post('products', 'ProductsController@index')->name('products');  
+// Route::post('add-products', 'ProductsController@create')->name('add-products'); 
+// Route::post('edit-Products/{id}', 'ProductsController@edit')->name('edit-products');  
+// Route::post('save-categories', 'ProductsController@store')->name('save-products');  

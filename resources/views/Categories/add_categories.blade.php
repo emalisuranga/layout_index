@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container">
-<form role="form" method="POST" action="{{ route('save-categories') }}" style="margin-top: 100px;">
+<form role="form" method="POST" action="{{ route('categories.store') }}" style="margin-top: 100px;">
 {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">

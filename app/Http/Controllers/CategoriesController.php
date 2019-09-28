@@ -78,14 +78,20 @@ class CategoriesController extends Controller
      * @param  \App\categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, categories $categories)
+    public function update(Request $request, $id)
     {
-        // $ticket = $this->find($data['id']);
-        // $ticket->user_id = auth()->user()->id;
-        // $ticket->title = $data['title'];
-        // $ticket->description = $data['description'];
-        // $ticket->save();
-        // return 1;
+        $this->validate(request(), [
+            'categories_Name' => 'required|max:255',
+            'categories_description' => 'required',
+            'isActive' => 'required',
+        ]);
+
+        $categories = categories::find($id);
+        $categories->categories_Name = $request->get('categories_Name');
+        $categories->categories_description = $request->get('categories_description');
+        $categories->isActive = $request->get('isActive');
+        $categories->save();
+        return redirect()->to('categories')->with('success', 'Categories has been updated');;
     }
 
     /**

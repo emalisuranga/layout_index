@@ -3,8 +3,9 @@
 
 @section('content')
 <div class="container">
-<form role="form" method="POST" action="{{ route('save-categories') }}" style="margin-top: 100px;">
-{{ csrf_field() }}
+<form role="form" method="post" action="{{ route('categories.update',$categories->id) }}" style="margin-top: 100px;">
+@method('PATCH')
+        @csrf
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Category Name</label>
@@ -25,7 +26,7 @@
                 </div>
                 <div class="form-group">
                   <label>Category Description</label>
-                  <textarea class="form-control" rows="3" id="categories_description" name="categories_description" placeholder="Enter ..." value="{{$categories->categories_description}}"></textarea>
+                  <textarea class="form-control" rows="3" id="categories_description" name="categories_description" placeholder="Enter ...">{{$categories->categories_description}}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
